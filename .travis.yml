@@ -4,11 +4,11 @@ services:
 - docker
 
 script:
-- docker pull gcr.io/kubernetes-helm/tiller:v2.12.0
-- docker tag gcr.io/kubernetes-helm/tiller:v2.12.0 alanpeng/tiller:v2.12.0
+- docker pull gcr.io/heptio-images/contour:master
+- docker tag gcr.io/heptio-images/contour:master alanpeng/contour:master
 
 deploy:
   provider: script
-  script: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && docker push alanpeng/tiller:v2.12.0
+  script: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && docker push alanpeng/contour:master
   on:
     all_branches: true
