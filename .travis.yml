@@ -4,11 +4,11 @@ services:
 - docker
 
 script:
-- docker pull gcr.io/heptio-images/contour:master
-- docker tag gcr.io/heptio-images/contour:master alanpeng/contour:master
+- docker pull iad.ocir.io/oracle/mysql-operator:0.2.0
+- docker tag iad.ocir.io/oracle/mysql-operator:0.2.0 alanpeng/mysql-operator:0.2.0
 
 deploy:
   provider: script
-  script: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && docker push alanpeng/contour:master
+  script: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && docker push mysql-operator:0.2.0
   on:
     all_branches: true
