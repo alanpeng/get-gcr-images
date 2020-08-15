@@ -9,6 +9,6 @@ script:
 
 deploy:
   provider: script
-  script: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && docker push mysql-operator:0.2.0
+  script: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && docker push alanpeng/mysql-operator:0.2.0
   on:
     all_branches: true
